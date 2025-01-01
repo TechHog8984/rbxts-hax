@@ -96,6 +96,7 @@ declare namespace debug {
 
 	/**
 	 * Returns the value at `index` in the stack frame `level`.
+	 * If `index` is not provided, it instead returns a table containing all stack elements.
 	 * @param level The stack frame to look up.
 	 * @param index The index of the value to look up.
 	 * @returns The value in the stack.
@@ -104,7 +105,7 @@ declare namespace debug {
 	 * print(1, 5, debug.getstack(1, 3)); // 1 5 5
 	 * print(1, 5, debug.getstack(1, 2)); // 1 5 1
 	 */
-	function getstack(level: number, index: number): unknown;
+	function getstack(level: number, index?: number): unknown;
 
 	/**
 	 * Returns the upvalue at `index` in the function or level `fn`.
